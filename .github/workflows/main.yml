@@ -16,7 +16,7 @@ jobs:
 
     services:
       mysql:
-        image: mysql8.1
+        image: mysql:latest
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: test
@@ -54,6 +54,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    container: setupphp/node:latest
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
